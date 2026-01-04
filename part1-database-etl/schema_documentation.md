@@ -1,4 +1,4 @@
-ENTITY: customers
+## ENTITY: customers
 Purpose: Stores customer information
 Attributes:
   - customer_id: Unique identifier (Primary Key)
