@@ -72,3 +72,14 @@ ORDER_ITEMS
     |
 PRODUCTS
 (product_id PK)
+
+
+## Third Normal Form (3NF) Justification:
+
+A relation is in Third Normal Form (3NF) if it is in 2NF and has no transitive dependency, i.e., every non-key attribute depends only on a candidate key.
+
+### Customers
+Primary Key: customer_id
+Alternate Key: email
+FD: customer_id → all other attributes
+Justification: All non-key attributes depend directly on the primary/alternate key with no transitive dependency.
