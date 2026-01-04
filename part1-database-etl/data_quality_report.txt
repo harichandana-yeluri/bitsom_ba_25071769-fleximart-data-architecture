@@ -1,0 +1,25 @@
+This is a detailed data quality report for the ETL pipeline, highlighting key findings and recommendations for each dataset processed.
+Data Quality Report
+====================
+1. Customers Dataset
+--------------------
+- Records processed: 26 records
+- Duplicates: 1 record
+  - 1 duplicate records found based on 'customer_id'.
+- Missing Values Handled: 5 records
+    - 'email': 5 missing values dropped.
+- Records Loaded: 20 records
+
+- Issues:
+  - Inconsistent date formats in 'registration_date' (e.g., '15/04/2023', '08-15-2023').
+  - Missing email addresses for some customers.
+  - Inconsistent phone number formats (e.g., presence of country code, leading zeros).
+
+2. Products Dataset
+-------------------
+- Records processed: 20 records
+- Duplicates: 0 records
+- Missing Values Handled: 4 records
+    - 'price': 3 missing values filled with average price per category.
+    - 'stock_quantity': 1 missing value filled with 0.
+- Records Loaded: 20 records
