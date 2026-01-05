@@ -54,5 +54,5 @@ MongoDB stores data in JSON-like BSON documents, where each document can have a 
 Advantages:
     - Eliminates the need for nullable columns or multiple subtype tables
     - Simplifies data modelling for diverse product categories
-    - Allows rapid iteration and adaptation to business requirements
+    - Allows rapid iteration and adaptation to business requirements<br>
 Thus, MongoDB naturally supports heterogeneous product attributes within a single collection.

@@ -106,7 +106,7 @@ A is a prime attribute
 - Primary Key: order_item_id
 - Natural Key: (order_id, product_id)
 - FD: (order_id, product_id) → quantity, unit_price, subtotal
-Note: subtotal is a derived attribute (quantity × unit_price)
+Note: subtotal is a derived attribute (quantity × unit_price)<br>
 ⚠️ Strict 3NF violated due to derived attribute
 ✅ Acceptable denormalization in practice
 
