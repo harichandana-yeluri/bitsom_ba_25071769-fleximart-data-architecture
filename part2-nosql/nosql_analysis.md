@@ -22,7 +22,7 @@ Thus, relational databases lack the flexibility to handle heterogeneous attribut
 Relational databases enforce a strict schema, meaning any change to the structure requires Data Definition Language (DDL) operations such as ALTER TABLE.
 When new product types are introduced:
 - New columns must be added to existing tables, or
-- New tables must be created to store additional attributes
+- New tables must be created to store additional attributes<br>
 This leads to several challenges:
 - Downtime or performance degradation during schema migrations
 - Risk of breaking existing queries, views, or stored procedures
@@ -33,7 +33,7 @@ In dynamic business environments where product categories evolve frequently, suc
 Customer reviews represent a one-to-many relationship, where each product can have multiple reviews. In a relational database, this requires:
 - A separate Reviews table
 - Foreign key relationships linking reviews to products
-- Multiple joins to retrieve product details along with their reviews
+- Multiple joins to retrieve product details along with their reviews<br>
 This approach introduces the following issues:
 - Increased query complexity due to joins
 - Performance overhead when retrieving deeply related data
@@ -50,7 +50,7 @@ MongoDB stores data in JSON-like BSON documents, where each document can have a 
     - For example:
         - A smartphone document may include RAM, a processor, and a battery.
         - A clothing document may include sizes_available, material, and fit.
-- There is no requirement for all documents in a collection to share identical fields.
+- There is no requirement for all documents in a collection to share identical fields.<br>
 **Advantages:**
     - Eliminates the need for nullable columns or multiple subtype tables
     - Simplifies data modelling for diverse product categories
@@ -60,7 +60,7 @@ Thus, MongoDB naturally supports heterogeneous product attributes within a singl
 ### 2. Embedded documents (reviews within products)
 MongoDB allows embedded documents and arrays, enabling related data to be stored together in a single document.
 - In the given dataset, customer reviews are embedded directly inside each product document as an array of review objects.
-- This design aligns with MongoDB’s principle of data locality, where frequently accessed related data is stored together.
+- This design aligns with MongoDB’s principle of data locality, where frequently accessed related data is stored together.<br>
 **Advantages:**
 - Eliminates the need for joins to fetch product and review data
 - Improves read performance by retrieving all relevant information in a single query
@@ -70,7 +70,7 @@ As a result, MongoDB handles nested and one-to-many relationships more efficient
 ### 3. Horizontal scalability
 MongoDB is built to support horizontal scaling through a mechanism known as sharding.
 - Data is distributed across multiple servers (shards) based on a shard key (e.g., product_id or category).
-- As the dataset grows, additional servers can be added to the cluster without downtime.
+- As the dataset grows, additional servers can be added to the cluster without downtime.<br>
 **Key advantages:**
 - Handles large volumes of products, reviews, and user activity efficiently
 - Maintains high availability and performance under increasing load
