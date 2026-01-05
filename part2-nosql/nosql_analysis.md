@@ -80,4 +80,20 @@ This makes MongoDB highly suitable for large-scale, high-traffic applications.
 ## Section C: Trade-offs
 
 ### What are two disadvantages of using MongoDB instead of MySQL for this product catalog?
-Using MongoDB instead of MySQL for the given product catalog offers flexibility, but it also introduces certain disadvantages. Two significant disadvantages are explained below:
+Using MongoDB instead of MySQL for the given products_catalog offers flexibility, but it also introduces certain disadvantages. Two significant disadvantages are explained below:
+
+**1. Lack of Strong Relational Integrity and Joins**
+MongoDB is a NoSQL document-oriented database and does not enforce foreign key constraints or strong relational integrity in the same way MySQL does. In the context of this product catalog, entities such as products, reviews, users, and categories are embedded or loosely related within documents.
+**As a result:**
+    - There is no automatic enforcement of referential integrity between related data (e.g., user IDs in reviews are not validated against a users collection).
+    - Complex relationships and cross-entity queries require manual handling at the application level, which increases development complexity.
+    - Performing multi-collection joins using MongoDB’s $lookup is less efficient and more complex compared to SQL joins in MySQL.<br>
+This makes MongoDB less suitable when strict relational consistency and complex relational queries are required.
+
+**2. Weaker Support for Complex Transactions and ACID Guarantees**
+Although MongoDB supports transactions, they are more limited and less performant compared to MySQL’s mature ACID-compliant transaction handling.
+**In the case of this product catalog:**
+    - Operations such as simultaneously updating stock levels, order records, and review statistics across multiple documents or collections are harder to manage efficiently.
+    - Multi-document transactions introduce performance overhead and increase system complexity.
+    - MySQL provides robust, well-optimised transactional support, which is particularly advantageous for inventory management systems where data consistency is critical.<br>
+Therefore, MongoDB may be less reliable than MySQL for workloads requiring frequent, complex, multi-table transactional operations.
