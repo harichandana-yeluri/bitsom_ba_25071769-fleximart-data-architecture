@@ -122,3 +122,27 @@ Note: subtotal is a derived attribute (quantity × unit_price)
 | C002        | Priya      | Patel     | [priya.patel@yahoo.com](mailto:priya.patel@yahoo.com)       | +91-9988776655 | Mumbai    | 2023-02-20        |
 | C004        | Sneha      | Reddy     | [sneha.reddy@gmail.com](mailto:sneha.reddy@gmail.com)       | +91-9123456789 | Hyderabad | 2023-04-15        |
 | C005        | Vikram     | Singh     | [vikram.singh@outlook.com](mailto:vikram.singh@outlook.com) | +91-9988112233 | Chennai   | 2023-05-22        |
+
+### Products table:
+| product_id | product_name       | category    | price     | stock_quantity |
+| ---------- | ------------------ | ----------- | --------- | -------------- |
+| P001       | Samsung Galaxy S21 | Electronics | 45999.00  | 150            |
+| P002       | Nike Running Shoes | Fashion     | 3499.00   | 80             |
+| P003       | Apple MacBook Pro  | Electronics | 14141.53  | 45             |
+| P004       | Levi’s Jeans       | Fashion     | 2999.00   | 120            |
+
+### Orders table:
+| order_id | customer_id | order_date | total_amount     | status       |
+| -------- | ----------- | ---------- | ---------------- | ------------ |
+| T001     | C001        | 2024-01-15 | 45999.00         | Completed    |
+| T002     | C002        | 2024-01-16 | 5998.00          | Completed    |
+| T005     | C005        | 2024-01-20 | 1950.00          | Completed    |
+| T006     | C006        | 2024-01-22 | 12999.00         | Completed    |
+
+### Order_items table:
+| order_item_id | order_id | product_id | quantity | unit_price     | subtotal        |
+| ------------- | -------- | ---------- | -------- | -------------- | --------------- |
+| 54            | T001     | P001       | 1        | 45999.00       | 45999.00        |
+| 55            | T002     | P004       | 2        | 2999.00        | 5998.00         |
+| 57            | T005     | P009       | 3        | 650.00         | 1950.00         |
+| 58            | T006     | P012       | 1        | 12999.00       | 12999.00        |
