@@ -11,7 +11,7 @@ const fs = require("fs");
 const path = require("path");
 
 // MongoDB connection URL and database name
-const MONGO_URL="mongodb+srv://harichandanayeluri_db_user:AJ2wr7RSnLrZp512@bitsom-ai-course.s461hof.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URL="mongodb+srv://<username>:<password>@bitsom-ai-course.s461hof.mongodb.net/?retryWrites=true&w=majority";
 const DB_NAME="Fleximart";
 const COLLECTION_NAME="products_catalog";
 // Path to the JSON data file
@@ -171,9 +171,55 @@ async function addReview() {
   }
 }
 
+async function complexAggregation() {
+  const client = new MongoClient(MONGO_URL);
+
+  try {
+    await client.connect();
+    console.log("Connected to MongoDB");
+
+    const db = client.db(DB_NAME);
+    const collection = db.collection(COLLECTION_NAME);
+
+    // Aggregation pipeline
+    const pipeline = [
+      {
+        // Group by category
+        $group: {
+          _id: "$category",
+          avg_price: { $avg: "$price" },
+          product_count: { $sum: 1 }
+        }
+      },
+      {
+        // Rename _id to category
+        $project: {
+          _id: 0,
+          category: "$_id",
+          avg_price: { $round: ["$avg_price", 2] }, // round to 2 decimals
+          product_count: 1
+        }
+      },
+      {
+        // Sort by avg_price descending
+        $sort: { avg_price: -1 }
+      }
+    ];
+
+    const results = await collection.aggregate(pipeline).toArray();
+
+    console.log("Average price by category:");
+    console.table(results);
+  } catch (error) {
+    console.error("Error calculating average price by category:", error);
+  } finally {
+    await client.close();
+    console.log("MongoDB connection closed");
+  }
+}
 
 // Import the provided JSON file into collection 'products_catalog'
-// loadData();
+loadData();
 
 // Basic Query: Find all products in "Electronics" category with price less than 50000
 // Return only: name, price, stock
@@ -186,3 +232,7 @@ reviewAnalysis();
 // Update Operation: Add a new review to product "ELEC001"
 // Review: {user: "U999", rating: 4, comment: "Good value", date: ISODate()}
 addReview();
+
+// Complex Aggregation: Calculate average price by category Return: category, avg_price, product_count
+// Sort by avg_price descending
+complexAggregation();
