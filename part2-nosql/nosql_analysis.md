@@ -7,7 +7,7 @@ In a relational database, all records in a table must conform to the same schema
 - For example:
     - Laptops require attributes such as RAM, processor, storage, and screen size.
     - Shoes require attributes such as size, colour, sole type, and material.<br>
-    
+
 To accommodate this in an RDBMS, one of the following approaches must be used:
 - Wide tables with many nullable columns, where most columns remain unused for certain product types, leading to:
     - Wasted storage. 
@@ -59,9 +59,9 @@ MongoDB stores data in JSON-like BSON documents, where each document can have a 
 - There is no requirement for all documents in a collection to share identical fields.<br>
 
 **Advantages:**
-    - Eliminates the need for nullable columns or multiple subtype tables. 
-    - Simplifies data modelling for diverse product categories. 
-    - Allows rapid iteration and adaptation to business requirements.<br>
+  - Eliminates the need for nullable columns or multiple subtype tables. 
+  - Simplifies data modelling for diverse product categories. 
+  - Allows rapid iteration and adaptation to business requirements.<br>
 
 Thus, MongoDB naturally supports heterogeneous product attributes within a single collection.
 
