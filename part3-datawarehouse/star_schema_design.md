@@ -141,7 +141,7 @@ Order # 101, Customer "John Doe", Product "Laptop", Qty: 2, Price: 50000
     - The transformed data is loaded into the fact and dimension tables.
 
 **Becomes in Data Warehouse:**
-dim_date
+**dim_date**
 {
   date_key: 20240115,
   full_date: '2024-01-15',
@@ -149,19 +149,22 @@ dim_date
   quarter: 'Q1',
   year: 2024
 }
-dim_product
+
+**dim_product**
 {
   product_key: 5,
   product_name: 'Laptop',
   category: 'Electronics'
 }
-dim_customer
+
+**dim_customer**
 {
   customer_key: 12,
   customer_name: 'John Doe',
   city: 'Mumbai'
 }
-fact_sales
+
+**fact_sales**
 {
   date_key: 20240115,
   product_key: 5,
