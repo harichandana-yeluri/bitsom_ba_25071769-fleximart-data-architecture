@@ -88,9 +88,8 @@ Through this project, I gained hands-on experience in cleaning and transforming 
 
 ## Challenges Faced
 
-1. **Problem faced**: Encountered problem while ingesting data
-    - **solution:** 
+1. **Problem faced**: Encountered timeout errors during data ingestion into the MySQL database, especially when loading large volumes of records in a single transaction.
+    - **solution:** Implemented bulk insertion using the executemany() method to efficiently insert multiple records at once. Additionally, committed transactions after loading each table instead of committing all data at the end. This reduced transaction size, improved performance, and prevented timeout issues.
 
-
-2. **Problem faced**:
-    - **solution:**
+2. **Problem faced**: Faced challenges while ingesting data into MongoDB and writing aggregation queries due to unfamiliarity with MongoDB-specific functions, syntax, and error-handling mechanisms.
+    - **solution:** Conducted focused research on MongoDB documentation and aggregation pipelines to identify appropriate functions for data ingestion and querying. Implemented proper validation and error handling to ensure successful execution of operations.
