@@ -7,7 +7,7 @@
 
 ## Project Overview
 
-[2-3 sentences describing what you built]
+In this project, three different structures are used to represent various stages of data conditioning, formatting, loading, and analysis. The first section focuses on cleaning raw data and transforming it into a structured database for efficient storage and further processing. The second section demonstrates the ingestion of product data into a NoSQL database, highlighting its functionality along with the advantages and limitations of using a NoSQL approach. The third section covers data warehouse design, explaining how data is structured and transformed from an OLTP system into an OLAP system to support analytical reporting and decision-making.
 
 ## Repository Structure
 ├── part1-database-etl/
@@ -29,12 +29,22 @@
 ## Technologies Used
 
 - Python 3.x, pandas, mysql-connector-python
-- MySQL 8.0 / PostgreSQL 14
+- MySQL 8.0 
 - MongoDB 6.0
+
 
 ## Setup Instructions
 
+To execute this project smoothly, ensure that **Python**, **Pandas**, **MySQL**, and **MongoDB** are pre-installed and properly configured on your system. Additionally, a **Jupyter Notebook extension in Visual Studio Code** is required to run and test the ETL pipeline.
+
+
 ### Database Setup
+
+- Install **MySQL Server** and configure the **root user** with the required credentials.
+- Install **MySQL Workbench** to provide a graphical interface for database management and query execution.
+- Create the required databases by executing the provided SQL scripts.
+- Run the schema scripts for both **`fleximart` (OLTP)** and **`fleximart_dw` (Data Warehouse)** to ensure all necessary tables are created before data loading.
+- Verify that tables are successfully created and accessible before proceeding with data injection and ETL processes.
 
 # Create databases
 mysql -u root -p -e "CREATE DATABASE fleximart;"
@@ -53,12 +63,17 @@ mysql -u root -p fleximart_dw < part3-datawarehouse/analytics_queries.sql
 
 
 ### MongoDB Setup
+- Install **MongoDB** to support semi-structured data storage and processing.
+- Install **MongoDB Compass** as a graphical tool to visualize collections and execute queries on NoSQL data.
+- Ensure that MySQL and MongoDB services are running and accessible before executing the mongoDB operations.
+- Create a database named **fleximart** and collection **product_catalog**
+
 
 mongosh < part2-nosql/mongodb_operations.js
 
 ## Key Learnings
 
-[3-4 sentences on what you learned]
+
 
 ## Challenges Faced
 
