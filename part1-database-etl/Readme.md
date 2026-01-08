@@ -31,8 +31,11 @@ This file provides a detailed summary of the data quality checks and transformat
 
 **Generated report includes:**
     - Number of records processed per file
+
     - Number of duplicates removed
+
     - Number of missing values handled
+    
     - Number of records loaded successfully
 
 ### schema_documentation
