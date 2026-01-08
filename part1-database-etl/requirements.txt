@@ -1,0 +1,15 @@
+Requirements for this model:
+
+pandas==1.5.3
+psycopg2-binary==2.9.6
+Mysql-connector-python==8.0.33
+Mysql database server version 8.0 or higher
+jupyterlab==3.4.4
+
+.env file with the following variables:
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=<your_password>
+DB_NAME=<your_database>
+DB_PORT=3306
+
