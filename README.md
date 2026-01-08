@@ -1,8 +1,11 @@
 # FlexiMart Data Architecture Project
 
 **Student Name:** Yeluri Venkata Lakshmi Hari Chandana
+
 **Student ID:** bitsom_ba_25071769
+
 **Email:** harichandana.yeluri@gmail.com
+
 **Date:** 08/01/2026
 
 ## Project Overview
@@ -10,6 +13,7 @@
 In this project, three different structures are used to represent various stages of data conditioning, formatting, loading, and analysis. The first section focuses on cleaning raw data and transforming it into a structured database for efficient storage and further processing. The second section demonstrates the ingestion of product data into a NoSQL database, highlighting its functionality along with the advantages and limitations of using a NoSQL approach. The third section covers data warehouse design, explaining how data is structured and transformed from an OLTP system into an OLAP system to support analytical reporting and decision-making.
 
 ## Repository Structure
+```text
 ├── part1-database-etl/
 │   ├── etl_pipeline.py
 │   ├── schema_documentation.md
