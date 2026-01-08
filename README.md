@@ -44,7 +44,7 @@ To execute this project smoothly, ensure that **Python**, **Pandas**, **MySQL**,
 - Install **MySQL Workbench** to provide a graphical interface for database management and query execution.
 - Create the required databases by executing the provided SQL scripts.
 - Run the schema scripts for both **`fleximart` (OLTP)** and **`fleximart_dw` (Data Warehouse)** to ensure all necessary tables are created before data loading.
-- Verify that tables are successfully created and accessible before proceeding with data injection and ETL processes.
+- Verify that tables are successfully created and accessible before proceeding with data ingestion and ETL processes.
 
 # Create databases
 mysql -u root -p -e "CREATE DATABASE fleximart;"
@@ -72,10 +72,14 @@ mysql -u root -p fleximart_dw < part3-datawarehouse/analytics_queries.sql
 mongosh < part2-nosql/mongodb_operations.js
 
 ## Key Learnings
-
+Through this project, I learned how to clean and transform raw data and ingest it into a structured database, followed by querying the data to derive meaningful analysis. I also gained experience in ingesting data into MongoDB and performing queries on semi-structured data based on business requirements. Additionally, I learned how to design and implement ETL processes to move data from an OLTP system to an OLAP system. The project also helped me understand star schema design and how to generate analytical reports using a data warehouse.
 
 
 ## Challenges Faced
 
-1. [Challenge and solution]
-2. [Challenge and solution]
+1. **Problem faced**:
+    - **solution:** 
+
+
+2. **Problem faced**:
+    - **solution:**
